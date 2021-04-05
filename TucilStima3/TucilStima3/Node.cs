@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace TucilStima3
+{
+    class Node
+    {
+        public string name;
+        public double x;
+        public double y;
+        public Node(string name, float xCor, float yCor)
+        {
+            this.name = name;
+            this.x = xCor;
+            this.y = yCor;
+        }
+    }
+}
