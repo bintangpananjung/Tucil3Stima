@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kuliah\\smt4\\Stima\\tucil3\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\Tucil3Stima\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
       "projectName": "TucilStima3",
-      "projectPath": "D:\\Kuliah\\smt4\\Stima\\tucil3\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\Tucil3Stima\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Kuliah\\smt4\\Stima\\tucil3\\TucilStima3\\TucilStima3\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\Tucil3Stima\\TucilStima3\\TucilStima3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

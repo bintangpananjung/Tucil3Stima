@@ -42,23 +42,23 @@ namespace TucilStima3
         public void LoadFile(string filename)
         {
             string[] lines = System.IO.File.ReadAllLines(filename);
-            for (int idx = 1; idx < lines.Length; idx++)
+            bool edge = false;
+            for (int idx = 0; idx < lines.Length; idx++)
             {
                 string node1 = "";
                 string node2 = "";
                 bool parse = false;
                 int space = 0;
-                bool edge = false;
                 if (!edge)
                 {
-                    string xtemp ="";
-                    string ytemp ="";
+                    string xtemp = "";
+                    string ytemp = "";
                     for (int i = 0; i < lines[idx].Length; i++)
                     {
                         if (lines[idx][i] == '~')
                         {
                             edge = true;
-                            break;
+                            //Console.WriteLine(edge);
                         }
                         else
                         {
@@ -74,13 +74,21 @@ namespace TucilStima3
                             {
                                 ytemp += lines[idx][i];
                             }
-                            if (lines[idx][i] != ' ')
+                            if (lines[idx][i] == ' ')
                             {
                                 space++;
                             }
                         }
                     }
-                     AddNode(new Node(node1, Convert.ToDouble(xtemp), Convert.ToDouble(ytemp)));
+                    /*Console.WriteLine(lines[idx]);
+                    Console.WriteLine(node1);
+                    Console.WriteLine(xtemp);
+                    Console.WriteLine(ytemp);
+                    Console.WriteLine(space);*/
+                    if (!edge)
+                    {
+                        AddNode(new Node(node1, Convert.ToDouble(xtemp), Convert.ToDouble(ytemp)));
+                    }
                 }
                 else
                 {
