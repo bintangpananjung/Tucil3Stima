@@ -17,6 +17,13 @@ namespace TucilStima3
             adjacencyList.Find(v => v.node.name == node1.name).edges.Add(new Edge(node1,node2));
             adjacencyList.Find(v => v.node.name == node2.name).edges.Add(new Edge(node2,node1));
         }
+        public void AddEdge(string node1, string node2)
+        {
+            Node firstNode = adjacencyList.Find(v => v.node.name == node1).node;
+            Node secondNode = adjacencyList.Find(v => v.node.name == node2).node;
+            adjacencyList.Find(v => v.node.name == node1).edges.Add(new Edge(firstNode, secondNode));
+            adjacencyList.Find(v => v.node.name == node2).edges.Add(new Edge(secondNode, firstNode));
+        }
         public void AddNode(Node newNode)
         {
             if (adjacencyList.Find(v => v.node == newNode) == null)
@@ -32,7 +39,7 @@ namespace TucilStima3
                     v.PrintEdge();
             }
         }
-        /*public void LoadFile(string filename)
+        public void LoadFile(string filename)
         {
             string[] lines = System.IO.File.ReadAllLines(filename);
             for (int idx = 1; idx < lines.Length; idx++)
@@ -40,26 +47,62 @@ namespace TucilStima3
                 string node1 = "";
                 string node2 = "";
                 bool parse = false;
-                for (int i = 0; i < lines[idx].Length; i++)
+                int space = 0;
+                bool edge = false;
+                if (!edge)
                 {
-                    if (lines[idx][i] != ' ' && !parse)
+                    string xtemp ="";
+                    string ytemp ="";
+                    for (int i = 0; i < lines[idx].Length; i++)
                     {
-                        node1 += lines[idx][i];
+                        if (lines[idx][i] == '~')
+                        {
+                            edge = true;
+                            break;
+                        }
+                        else
+                        {
+                            if (lines[idx][i] != ' ' && space == 0)
+                            {
+                                node1 += lines[idx][i];
+                            }
+                            if (lines[idx][i] != ' ' && space == 1)
+                            {
+                                xtemp += lines[idx][i];
+                            }
+                            if (lines[idx][i] != ' ' && space == 2)
+                            {
+                                ytemp += lines[idx][i];
+                            }
+                            if (lines[idx][i] != ' ')
+                            {
+                                space++;
+                            }
+                        }
                     }
-                    if (lines[idx][i] != ' ' && parse)
-                    {
-                        node2 += lines[idx][i];
-                    }
-                    if (lines[idx][i] == ' ')
-                    {
-                        parse = true;
-                    }
+                     AddNode(new Node(node1, Convert.ToDouble(xtemp), Convert.ToDouble(ytemp)));
                 }
-                AddNode(node1);
-                AddNode(node2);
-                AddEdge(node1, node2);
+                else
+                {
+                    for (int i = 0; i < lines[idx].Length; i++)
+                    {
+                        if (lines[idx][i] != ' ' && !parse)
+                        {
+                            node1 += lines[idx][i];
+                        }
+                        if (lines[idx][i] != ' ' && parse)
+                        {
+                            node2 += lines[idx][i];
+                        }
+                        if (lines[idx][i] == ' ')
+                        {
+                            parse = true;
+                        }
+                    }
+                    AddEdge(node1, node2);
+                }
             }
-        }*/
+        }
     }
     
 }

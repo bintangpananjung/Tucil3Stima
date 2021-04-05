@@ -9,7 +9,7 @@ namespace TucilStima3
         public string name;
         public double x;
         public double y;
-        public Node(string name, float xCor, float yCor)
+        public Node(string name, double xCor, double yCor)
         {
             this.name = name;
             this.x = xCor;
