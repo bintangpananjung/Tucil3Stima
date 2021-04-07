@@ -1,0 +1,13 @@
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\obj\Debug\netcoreapp3.1\Tucil3Stima.csprojAssemblyReference.cache
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\obj\Debug\netcoreapp3.1\Tucil3Stima.AssemblyInfoInputs.cache
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\obj\Debug\netcoreapp3.1\Tucil3Stima.AssemblyInfo.cs
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\obj\Debug\netcoreapp3.1\Tucil3Stima.csproj.CoreCompileInputs.cache
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\bin\Debug\netcoreapp3.1\Tucil3Stima.exe
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\bin\Debug\netcoreapp3.1\Tucil3Stima.deps.json
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\bin\Debug\netcoreapp3.1\Tucil3Stima.runtimeconfig.json
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\bin\Debug\netcoreapp3.1\Tucil3Stima.runtimeconfig.dev.json
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\bin\Debug\netcoreapp3.1\Tucil3Stima.dll
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\bin\Debug\netcoreapp3.1\Tucil3Stima.pdb
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\obj\Debug\netcoreapp3.1\Tucil3Stima.dll
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\obj\Debug\netcoreapp3.1\Tucil3Stima.pdb
+D:\Kuliah\smt4\Stima\tucil3\Tucil3Stima\Tucil3Stima\obj\Debug\netcoreapp3.1\Tucil3Stima.genruntimeconfig.cache
