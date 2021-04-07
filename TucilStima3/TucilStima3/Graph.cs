@@ -39,9 +39,14 @@ namespace TucilStima3
                     v.PrintEdge();
             }
         }
+        public Node findNode(string name)
+        {
+            return adjacencyList.Find(v => v.node.name == name).node;
+        }
         public void LoadFile(string filename)
         {
-            string[] lines = System.IO.File.ReadAllLines(filename);
+            string pathFile  =  "..\..\..\..\test"  +  filename;
+            string[] lines = System.IO.File.ReadAllLines(pathFile);
             bool edge = false;
             for (int idx = 0; idx < lines.Length; idx++)
             {
@@ -51,8 +56,8 @@ namespace TucilStima3
                 int space = 0;
                 if (!edge)
                 {
-                    string xtemp = "";
-                    string ytemp = "";
+                    string xtemp ="";
+                    string ytemp ="";
                     for (int i = 0; i < lines[idx].Length; i++)
                     {
                         if (lines[idx][i] == '~')
@@ -110,6 +115,96 @@ namespace TucilStima3
                     AddEdge(node1, node2);
                 }
             }
+        }
+        public double euclideanDistance(double a, double b)
+        {
+            return Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
+        }
+        public double SumCostCount(Node tempStart, Node tempAdjacent, Node destination)
+        {
+            return euclideanDistance(tempStart.x - tempAdjacent.x, tempStart.y - tempAdjacent.y) + euclideanDistance(tempAdjacent.x - destination.x, tempAdjacent.y - destination.y);
+        }
+        public void printListNodeSumCost(List<NodeSumCost> listsum)
+        {
+            for(int i = 0; i < listsum.Count; i++)
+            {
+                Console.Write(listsum[i].tempNode.name + "(" + (listsum[i].sumCost).ToString() + ") ");
+            }
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+        public void BFSSearch(List<NodeSumCost> queue, Queue<Node> visited, Node start, Node destination, ListVertex result)
+        {
+            Node node;
+            bool found = false;
+            Node adjacentnode;
+            while (queue.Count != 0 && !found)
+            {
+                queue.Sort((a, b) => Convert.ToInt32(a.sumCost) - Convert.ToInt32(b.sumCost));
+                //printListNodeSumCost(queue);
+                node = queue[0].tempNode;
+                queue.RemoveAt(0);
+                result.addNodeList(node);
+                for (int i = 0; i < adjacencyList.Find(v => v.node.name == node.name).edges.Count; i++)
+                {
+                    adjacentnode = adjacencyList.Find(v => v.node.name == node.name).edges[i].node2;
+                    if (!visited.Contains(adjacentnode) )
+                    {
+                        queue.Add(new NodeSumCost(adjacentnode,SumCostCount(start,adjacentnode,destination)));
+                        if (adjacentnode == destination)
+                        {
+                            queue.Sort((a, b) => Convert.ToInt32(a.sumCost) - Convert.ToInt32(b.sumCost));
+                            if (queue[0].tempNode == destination)
+                            {
+                                visited.Enqueue(adjacentnode);
+                                result.addEdgeList(node, adjacentnode);
+                                found = true;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            visited.Enqueue(adjacentnode);
+                            result.addEdgeList(node, adjacentnode);
+                        }
+                    }
+                }
+
+            }
+        }
+        public ListVertex shortestPath(Node start, Node destination)
+        {
+            List<NodeSumCost> queue = new List<NodeSumCost>();
+            ListVertex result = new ListVertex();
+            Queue<Node> visited = new Queue<Node>();
+            queue.Add(new NodeSumCost(start, SumCostCount(start, start, destination)));
+            BFSSearch(queue, visited, start, destination, result);
+            bool foundDest = false;
+            /*for(int i=0; i < result.edgeList.Count; i++)
+            {
+                if (result.edgeList[i].edges.Find(e => e.node2 == destination)!=null)
+                {
+                    foundDest = true;
+                    break;
+                }
+            }*/
+            return result;
+            /*if (result.edgeList[(result.edgeList.Count-1)].edges.Find(e => e.node2==destination)!=null)
+            {
+                List<Node> path = new List<Node>();
+                List<double> pathCost = new List<double>();
+                result.findPath(path, start, destination);
+                for(int i=0; i < path.Count - 1; i++)
+                {
+                    pathCost.Add(euclideanDistance(path[i].x - path[(i + 1)].x, path[i].y - path[(i + 1)].y));
+                }
+                result.printPath(path,pathCost);
+            }
+            else
+            {
+                Console.WriteLine("Tidak ada jalur koneksi yang tersedia");
+                Console.WriteLine("Anda harus memulai koneksi baru itu sendiri.");
+            }*/
         }
     }
     

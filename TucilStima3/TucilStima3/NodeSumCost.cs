@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tucil3Stima
+namespace TucilStima3
 {
     class NodeSumCost
     {

@@ -19,28 +19,71 @@ namespace TucilStima3
             InitializeComponent();
         }
 
-        public void LoadFileVis(string filename, Microsoft.Msagl.Drawing.Graph graph, List<string> path)
+        public void LoadFileVis(string filename, Microsoft.Msagl.Drawing.Graph graph, List<Node> path, List<double> pathCost)
         {
-            string[] lines = System.IO.File.ReadAllLines(filename);
-            for (int idx = 1; idx < lines.Length; idx++)
+            string pathFile = @"..\..\..\..\test\" + filename;
+            string[] lines = System.IO.File.ReadAllLines(pathFile);
+            bool edge = false;
+            for (int idx = 0; idx < lines.Length; idx++)
             {
                 string node1 = "";
                 string node2 = "";
                 bool parse = false;
-                for (int i = 0; i < lines[idx].Length; i++)
+                int space = 0;
+                if (!edge)
                 {
-                    if (lines[idx][i] != ' ' && !parse)
+                    string xtemp = "";
+                    string ytemp = "";
+                    for (int i = 0; i < lines[idx].Length; i++)
                     {
-                        node1 += lines[idx][i];
+                        if (lines[idx][i] == '~')
+                        {
+                            edge = true;
+                            //Console.WriteLine(edge);
+                        }
+                        else
+                        {
+                            if (lines[idx][i] != ' ' && space == 0)
+                            {
+                                node1 += lines[idx][i];
+                            }
+                            if (lines[idx][i] != ' ' && space == 1)
+                            {
+                                xtemp += lines[idx][i];
+                            }
+                            if (lines[idx][i] != ' ' && space == 2)
+                            {
+                                ytemp += lines[idx][i];
+                            }
+                            if (lines[idx][i] == ' ')
+                            {
+                                space++;
+                            }
+                        }
                     }
-                    if (lines[idx][i] != ' ' && parse)
+                    if (!edge)
                     {
-                        node2 += lines[idx][i];
+                        AddNode(new Node(node1, Convert.ToDouble(xtemp), Convert.ToDouble(ytemp)));
                     }
-                    if (lines[idx][i] == ' ')
+                }
+                else
+                {
+                    for (int i = 0; i < lines[idx].Length; i++)
                     {
-                        parse = true;
+                        if (lines[idx][i] != ' ' && !parse)
+                        {
+                            node1 += lines[idx][i];
+                        }
+                        if (lines[idx][i] != ' ' && parse)
+                        {
+                            node2 += lines[idx][i];
+                        }
+                        if (lines[idx][i] == ' ')
+                        {
+                            parse = true;
+                        }
                     }
+                    AddEdge(node1, node2);
                 }
                 int x;
                 for (x = 0; x < path.Count - 1; x++)
@@ -67,7 +110,7 @@ namespace TucilStima3
         {
             openFileDialog1.Title = "Open file";
             openFileDialog1.ShowDialog();
-            
+
             iniNamaFile = System.IO.Path.GetFileName(openFileDialog1.FileName);
             labelFileName.Text = iniNamaFile;
         }
@@ -87,10 +130,32 @@ namespace TucilStima3
             panelGraf.Controls.Clear();
             Graph filenyaNi = new Graph();
             filenyaNi.LoadFile(iniNamaFile);
+            string startPlace = startNode.Text;
+            string destPlace = destNode.Text;
+            Node start = filenyaNi.findNode(startPlace);
+            Node destination = filenyaNi.findNode(destPlace);
+            ListVertex result = shortestPath(start, destination);
+            if (result.edgeList[(result.edgeList.Count - 1)].edges.Find(e => e.node2 == destination) != null)
+            {
+                List<Node> path = new List<Node>();
+                List<double> pathCost = new List<double>();
+                result.findPath(path, start, destination);
+                for (int i = 0; i < path.Count - 1; i++)
+                {
+                    pathCost.Add(euclideanDistance(path[i].x - path[(i + 1)].x, path[i].y - path[(i + 1)].y));
+                }
+                //result.printPath(path, pathCost);
+            }
+            else
+            {
+                string msgtext = "Tidak ada jalur koneksi yang tersedia, Anda harus memulai koneksi baru itu sendiri.";
+                MessageBox.Show(msgtext);
+            }
+
 
             Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
-            LoadFileVis(iniNamaFile, graph, path);
+            LoadFileVis(iniNamaFile, graph, path, pathCost);
             viewer.Graph = graph;
             panelGraf.SuspendLayout();
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;

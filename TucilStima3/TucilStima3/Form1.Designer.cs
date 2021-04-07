@@ -37,12 +37,12 @@ namespace TucilStima3
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonSubmit = new System.Windows.Forms.Button();
             this.destNode = new System.Windows.Forms.TextBox();
             this.startNode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelGraf = new System.Windows.Forms.Panel();
-            this.buttonSubmit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -125,6 +125,16 @@ namespace TucilStima3
             this.panel3.Size = new System.Drawing.Size(827, 121);
             this.panel3.TabIndex = 2;
             // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.Location = new System.Drawing.Point(686, 48);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(94, 29);
+            this.buttonSubmit.TabIndex = 4;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            // 
             // destNode
             // 
             this.destNode.Location = new System.Drawing.Point(488, 50);
@@ -167,16 +177,6 @@ namespace TucilStima3
             this.panelGraf.Name = "panelGraf";
             this.panelGraf.Size = new System.Drawing.Size(1361, 429);
             this.panelGraf.TabIndex = 3;
-            // 
-            // buttonSubmit
-            // 
-            this.buttonSubmit.Location = new System.Drawing.Point(686, 48);
-            this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(94, 29);
-            this.buttonSubmit.TabIndex = 4;
-            this.buttonSubmit.Text = "Submit";
-            this.buttonSubmit.UseVisualStyleBackColor = true;
-            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // Form1
             // 
