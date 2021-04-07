@@ -1,0 +1,31 @@
+SimpangRancabolang -3,4 1,4
+YaminEnyak -3,9 -0,5
+RemuCaffe -4,1 -2,1
+SimpangPluto -2,8 0
+TamanPersadaAsri -2,9 -0,8
+PempekLopek -1,1 -0,4
+RsiaHarapanBunda -1,3 -2,6
+ToserbaGriya -0,5 -0,5
+FbiDimsum 0,2 2,1
+PegadaianSyariah 1,8 1,9
+RayisCollection 3,3 1,6
+FourwheelCoffee 1,8 -0,9
+MasjidAlMuhajirin 4,6 -1,4
+SimpangSaturnusSel 4,9 1,3
+~
+SimpangRancabolang YaminEnyak
+YaminEnyak TamanPersadaAsri
+YaminEnyak RemuCaffe
+TamanPersadaAsri SimpangPluto
+SimpangPluto PempekLopek
+PempekLopek ToserbaGriya
+RemuCaffe RsiaHarapanBunda
+RsiaHarapanBunda ToserbaGriya
+ToserbaGriya FbiDimsum
+ToserbaGriya FourwheelCoffee
+FbiDimsum PegadaianSyariah
+PegadaianSyariah RayisCollection
+RayisCollection SimpangSaturnusSel
+RayisCollection FourwheelCoffee
+SimpangSaturnusSel MasjidAlMuhajirin
+FourwheelCoffee MasjidAlMuhajirin
