@@ -42,6 +42,7 @@ namespace TucilStima3
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelGraf = new System.Windows.Forms.Panel();
+            this.buttonSubmit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,7 +75,7 @@ namespace TucilStima3
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(63, 139);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(664, 121);
+            this.panel2.Size = new System.Drawing.Size(507, 121);
             this.panel2.TabIndex = 1;
             // 
             // labelFileName
@@ -114,18 +115,19 @@ namespace TucilStima3
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightSalmon;
+            this.panel3.Controls.Add(this.buttonSubmit);
             this.panel3.Controls.Add(this.destNode);
             this.panel3.Controls.Add(this.startNode);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(760, 139);
+            this.panel3.Location = new System.Drawing.Point(597, 139);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(664, 121);
+            this.panel3.Size = new System.Drawing.Size(827, 121);
             this.panel3.TabIndex = 2;
             // 
             // destNode
             // 
-            this.destNode.Location = new System.Drawing.Point(506, 50);
+            this.destNode.Location = new System.Drawing.Point(488, 50);
             this.destNode.Name = "destNode";
             this.destNode.Size = new System.Drawing.Size(125, 27);
             this.destNode.TabIndex = 3;
@@ -133,7 +135,7 @@ namespace TucilStima3
             // 
             // startNode
             // 
-            this.startNode.Location = new System.Drawing.Point(160, 50);
+            this.startNode.Location = new System.Drawing.Point(141, 50);
             this.startNode.Name = "startNode";
             this.startNode.Size = new System.Drawing.Size(125, 27);
             this.startNode.TabIndex = 2;
@@ -165,6 +167,16 @@ namespace TucilStima3
             this.panelGraf.Name = "panelGraf";
             this.panelGraf.Size = new System.Drawing.Size(1361, 429);
             this.panelGraf.TabIndex = 3;
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.Location = new System.Drawing.Point(686, 48);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(94, 29);
+            this.buttonSubmit.TabIndex = 4;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // Form1
             // 
@@ -203,6 +215,7 @@ namespace TucilStima3
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelGraf;
+        private System.Windows.Forms.Button buttonSubmit;
     }
 }
 
