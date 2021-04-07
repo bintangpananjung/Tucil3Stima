@@ -18,6 +18,11 @@ Program dapat digunakan dengan cara sebagai berikut :
 4. Masukkan lokasi start dan destination, kemudian klik tombol submit.
 5. Program akan menampilkan graf dan menampilkan lintasan yang terpendek.
 
+format untuk membuat map :
+1. masukkan nama simpul/tempat, xkoordinat, dan ykoordinat (urut dan dipisah masing-masing oleh spasi).
+2. jika sudah memasukkan semua simpul, tambah 1 baris yang berisi "~" sebagai penanda.
+3. masukkan ketetanggan dari simpul di baris-baris selanjutnya.
+
 ## Tentang Pembuat
 
 Program ini dibuat oleh Muhammad Bintang Pananjung (NIM 13519004) dan Muhammad Rayhan Ravianda (NIM 13519201), salah dua mahasiswa program studi Teknik Informatika angkatan 2019 Institut Teknologi Bandung yang saat ini sedang menjalankan studi di semester 4. Harapan pembuat semoga program ini dapat dijadikan referensi dan mempermudah bagi masyarakat luas dan dapat dikembangkan lebih jauh di kemudian hari. 
