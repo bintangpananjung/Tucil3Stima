@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TucilStima3
 {
-    class NodeSumCost
+    public class NodeSumCost
     {
         public Node tempNode;
         public double sumCost;

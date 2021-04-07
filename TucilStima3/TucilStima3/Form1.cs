@@ -19,10 +19,10 @@ namespace TucilStima3
             InitializeComponent();
         }
 
-        public void LoadFileVis(string filename, Microsoft.Msagl.Drawing.Graph graph, List<Node> path, List<double> pathCost)
+        public void LoadFileVis(string filename, Microsoft.Msagl.Drawing.Graph graph, List<Node> path, List<double> pathCost, Graph thisGraph)
         {
             string pathFile = @"..\..\..\..\test\" + filename;
-            string[] lines = System.IO.File.ReadAllLines(pathFile);
+            string[] lines = System.IO.File.ReadAllLines(filename);
             bool edge = false;
             for (int idx = 0; idx < lines.Length; idx++)
             {
@@ -63,7 +63,7 @@ namespace TucilStima3
                     }
                     if (!edge)
                     {
-                        AddNode(new Node(node1, Convert.ToDouble(xtemp), Convert.ToDouble(ytemp)));
+                        graph.AddNode(node1);
                     }
                 }
                 else
@@ -83,12 +83,34 @@ namespace TucilStima3
                             parse = true;
                         }
                     }
-                    AddEdge(node1, node2);
+                    var e = graph.AddEdge(node1, node2);
+                    e.Attr.ArrowheadAtSource = Microsoft.Msagl.Drawing.ArrowStyle.None;
+                    e.Attr.ArrowheadAtTarget = Microsoft.Msagl.Drawing.ArrowStyle.None;
+                    e.LabelText= (thisGraph.euclideanDistance(thisGraph.findNode(node1).x - thisGraph.findNode(node2).x, thisGraph.findNode(node1).y - thisGraph.findNode(node2).y)).ToString("#.##");
+                    int x;
+                    for (x = 0; x < path.Count - 1; x++)
+                    {
+                        if ((node1 == path[x].name && node2 == path[(x + 1)].name) || (node2 == path[x].name && node1 == path[(x + 1)].name))
+                        {
+                            break;
+                        }
+                    }   
+                    if (x == path.Count - 1)
+                    {
+                        
+                    }
+                    else
+                    {
+                        e.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                    }
                 }
-                int x;
+                
+                /*graph.FindNode(node1).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
+                graph.FindNode(node2).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;*/
+                /*int x;
                 for (x = 0; x < path.Count - 1; x++)
                 {
-                    if ((node1 == path[x] && node2 == path[(x + 1)]) || (node2 == path[x] && node1 == path[(x + 1)]))
+                    if ((node1 == path[x].name && node2 == path[(x + 1)].name) || (node2 == path[x].name && node1 == path[(x + 1)].name))
                     {
                         break;
                     }
@@ -102,7 +124,7 @@ namespace TucilStima3
                     graph.AddEdge(node1, node2).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
                 }
                 graph.FindNode(node1).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
-                graph.FindNode(node2).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
+                graph.FindNode(node2).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;*/
             }
         }
 
@@ -134,15 +156,15 @@ namespace TucilStima3
             string destPlace = destNode.Text;
             Node start = filenyaNi.findNode(startPlace);
             Node destination = filenyaNi.findNode(destPlace);
-            ListVertex result = shortestPath(start, destination);
+            ListVertex result = filenyaNi.shortestPath(start, destination);
+            List<Node> path = new List<Node>();
+            List<double> pathCost = new List<double>();
             if (result.edgeList[(result.edgeList.Count - 1)].edges.Find(e => e.node2 == destination) != null)
             {
-                List<Node> path = new List<Node>();
-                List<double> pathCost = new List<double>();
                 result.findPath(path, start, destination);
                 for (int i = 0; i < path.Count - 1; i++)
                 {
-                    pathCost.Add(euclideanDistance(path[i].x - path[(i + 1)].x, path[i].y - path[(i + 1)].y));
+                    pathCost.Add(filenyaNi.euclideanDistance(path[i].x - path[(i + 1)].x, path[i].y - path[(i + 1)].y));
                 }
                 //result.printPath(path, pathCost);
             }
@@ -155,7 +177,7 @@ namespace TucilStima3
 
             Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
-            LoadFileVis(iniNamaFile, graph, path, pathCost);
+            LoadFileVis(iniNamaFile, graph, path, pathCost, filenyaNi);
             viewer.Graph = graph;
             panelGraf.SuspendLayout();
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;

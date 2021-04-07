@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TucilStima3
 {
-    class ListVertex
+    public class ListVertex
     {
         public List<Vertex> edgeList;
         public ListVertex()

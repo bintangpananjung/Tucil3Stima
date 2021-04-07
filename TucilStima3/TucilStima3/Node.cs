@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TucilStima3
 {
-    class Node
+    public class Node
     {
         public string name;
         public double x;

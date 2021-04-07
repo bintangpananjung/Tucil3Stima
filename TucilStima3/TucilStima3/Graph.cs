@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TucilStima3
 {
-    class Graph
+    public class Graph
     {
         public List<Vertex> adjacencyList;
 
@@ -45,8 +45,8 @@ namespace TucilStima3
         }
         public void LoadFile(string filename)
         {
-            string pathFile  =  "..\..\..\..\test"  +  filename;
-            string[] lines = System.IO.File.ReadAllLines(pathFile);
+            string pathFile  =  @"..\..\..\..\test"  +  filename;
+            string[] lines = System.IO.File.ReadAllLines(filename);
             bool edge = false;
             for (int idx = 0; idx < lines.Length; idx++)
             {
@@ -179,7 +179,6 @@ namespace TucilStima3
             Queue<Node> visited = new Queue<Node>();
             queue.Add(new NodeSumCost(start, SumCostCount(start, start, destination)));
             BFSSearch(queue, visited, start, destination, result);
-            bool foundDest = false;
             /*for(int i=0; i < result.edgeList.Count; i++)
             {
                 if (result.edgeList[i].edges.Find(e => e.node2 == destination)!=null)

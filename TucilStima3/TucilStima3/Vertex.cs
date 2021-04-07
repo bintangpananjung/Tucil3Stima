@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TucilStima3
 {
-    class Vertex
+    public class Vertex
     {
         public List<Edge> edges;
         public Node node;

@@ -1,0 +1,39 @@
+AgenPos -5,4 -1,1
+WarungKuning -3,9 -2,3
+FactoryOutlet -2,6 -3,2
+Alfamidi -1,2 -4,1
+TempatMakanKita -3,7 0,8
+MasjidAlJihad -2,5 -0,2
+KlinikNurFajar -1,1 -1
+Seafood94 0,2 -2
+Bakbul -1,9 0,9
+TbMandiriJaya -0,1 0,4
+SimpangTapirRaya 1,3 -0,5
+WarungSegitiga 0,2 1,1
+SpbuJababeka 0,9 1,9
+BebekKaleyo 2,2 0,9
+WarunkUpnormal 2,1 3,3
+~
+AgenPos TempatMakanKita
+AgenPos WarungKuning
+WarungKuning MasjidAlJihad
+WarungKuning FactoryOutlet
+FactoryOutlet KlinikNurFajar
+FactoryOutlet Alfamidi
+Alfamidi Seafood94
+Seafood94 SimpangTapirRaya
+Seafood94 KlinikNurFajar
+KlinikNurFajar TbMandiriJaya
+KlinikNurFajar MasjidAlJihad
+MasjidAlJihad Bakbul
+MasjidAlJihad TempatMakanKita
+TempatMakanKita Bakbul
+Bakbul WarungSegitiga
+Bakbul TbMandiriJaya
+TbMandiriJaya WarungSegitiga
+TbMandiriJaya SimpangTapirRaya
+SimpangTapirRaya BebekKaleyo
+WarungSegitiga SpbuJababeka
+SpbuJababeka BebekKaleyo
+SpbuJababeka WarunkUpnormal
+BebekKaleyo WarunkUpnormal
