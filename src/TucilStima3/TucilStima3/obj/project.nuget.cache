@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7FJa9BVe3krLjHExhs6+bP6eUy7U3RxUI5bGO6owQoNnbtIuK26TAHj5AASbkQn8tFOI9NjeWuQtn5tvoovQZQ==",
+  "dgSpecHash": "SAJuiYupjNeR/qnyoqWAUZyRbOfmLj7RajWg5AkPE9Wgymn3Zgt3OSJ4b3tmlCr8hgg/She1VJdUuYm+sqQ9XA==",
   "success": true,
-  "projectFilePath": "D:\\githubStima\\tucil3\\Tucil3Stima\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
+  "projectFilePath": "D:\\githubStima\\tucil3\\Tucil3Stima\\src\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rayha\\.nuget\\packages\\automaticgraphlayout\\1.1.11\\automaticgraphlayout.1.1.11.nupkg.sha512",
     "C:\\Users\\rayha\\.nuget\\packages\\automaticgraphlayout.drawing\\1.1.11\\automaticgraphlayout.drawing.1.1.11.nupkg.sha512",

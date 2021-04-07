@@ -104,27 +104,6 @@ namespace TucilStima3
                         e.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
                     }
                 }
-                
-                /*graph.FindNode(node1).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
-                graph.FindNode(node2).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;*/
-                /*int x;
-                for (x = 0; x < path.Count - 1; x++)
-                {
-                    if ((node1 == path[x].name && node2 == path[(x + 1)].name) || (node2 == path[x].name && node1 == path[(x + 1)].name))
-                    {
-                        break;
-                    }
-                }
-                if (x == path.Count - 1)
-                {
-                    graph.AddEdge(node1, node2);
-                }
-                else
-                {
-                    graph.AddEdge(node1, node2).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                }
-                graph.FindNode(node1).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
-                graph.FindNode(node2).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;*/
             }
         }
 

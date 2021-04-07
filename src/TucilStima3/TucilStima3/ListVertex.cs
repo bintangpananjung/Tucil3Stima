@@ -22,14 +22,7 @@ namespace TucilStima3
                 edgeList.Add(new Vertex(newNode));
             }
         }
-        /*public void printListNode()
-        {
-            if (edgeList.Count != 0)
-            {
-                foreach (var v in edgeList)
-                    v.printEdge();
-            }
-        }*/
+
         public void findPath(List<Node> path, Node name, Node other)
         {
             Node tempPath = other;
@@ -45,31 +38,12 @@ namespace TucilStima3
         }
         public void printPath(List<Node> path, List<double> pathCost)
         {
-            //Console.Write("(");
             int i;
             for (i = path.Count - 1; i > 0; i--)
             {
                 Console.Write(path[i].name + "-("+pathCost[(i-1)].ToString()+")>");
             }
             Console.WriteLine(path[i].name);
-            /*Console.Write(path[i].name + ", " + (path.Count - 2).ToString());
-            if (path.Count - 2 == 1)
-            {
-                Console.Write("st");
-            }
-            else if (path.Count - 2 == 2)
-            {
-                Console.Write("nd");
-            }
-            else if (path.Count - 2 == 3)
-            {
-                Console.Write("rd");
-            }
-            else
-            {
-                Console.Write("th");
-            }*/
-            //Console.Write(" Degree)\n");
         }
     }
 }

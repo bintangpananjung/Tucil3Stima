@@ -179,32 +179,7 @@ namespace TucilStima3
             Queue<Node> visited = new Queue<Node>();
             queue.Add(new NodeSumCost(start, SumCostCount(start, start, destination)));
             BFSSearch(queue, visited, start, destination, result);
-            /*for(int i=0; i < result.edgeList.Count; i++)
-            {
-                if (result.edgeList[i].edges.Find(e => e.node2 == destination)!=null)
-                {
-                    foundDest = true;
-                    break;
-                }
-            }*/
             return result;
-            /*if (result.edgeList[(result.edgeList.Count-1)].edges.Find(e => e.node2==destination)!=null)
-            {
-                List<Node> path = new List<Node>();
-                List<double> pathCost = new List<double>();
-                result.findPath(path, start, destination);
-                for(int i=0; i < path.Count - 1; i++)
-                {
-                    pathCost.Add(euclideanDistance(path[i].x - path[(i + 1)].x, path[i].y - path[(i + 1)].y));
-                }
-                result.printPath(path,pathCost);
-            }
-            else
-            {
-                Console.WriteLine("Tidak ada jalur koneksi yang tersedia");
-                Console.WriteLine("Anda harus memulai koneksi baru itu sendiri.");
-            }*/
         }
     }
-    
 }

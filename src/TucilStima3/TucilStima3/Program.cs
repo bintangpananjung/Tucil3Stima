@@ -12,13 +12,6 @@ namespace TucilStima3
         [STAThread]
         static public void Main()
         {
-            Graph graph = new Graph();
-            graph.LoadFile("itb.txt");
-            //graph.PrintadjacencyList();
-            Node A = graph.adjacencyList.Find(v => v.node.name == "KebunBinatang").node;
-            Node D = graph.adjacencyList.Find(v => v.node.name == "BebekAliBorme").node;
-            graph.shortestPath(A, D);
-
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

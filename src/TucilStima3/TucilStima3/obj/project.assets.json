@@ -120,11 +120,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\githubStima\\tucil3\\Tucil3Stima\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
+      "projectUniqueName": "D:\\githubStima\\tucil3\\Tucil3Stima\\src\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
       "projectName": "TucilStima3",
-      "projectPath": "D:\\githubStima\\tucil3\\Tucil3Stima\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
+      "projectPath": "D:\\githubStima\\tucil3\\Tucil3Stima\\src\\TucilStima3\\TucilStima3\\TucilStima3.csproj",
       "packagesPath": "C:\\Users\\rayha\\.nuget\\packages\\",
-      "outputPath": "D:\\githubStima\\tucil3\\Tucil3Stima\\TucilStima3\\TucilStima3\\obj\\",
+      "outputPath": "D:\\githubStima\\tucil3\\Tucil3Stima\\src\\TucilStima3\\TucilStima3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rayha\\AppData\\Roaming\\NuGet\\NuGet.Config",
